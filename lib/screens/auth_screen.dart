@@ -113,6 +113,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               key: const ValueKey("password"),
                               autocorrect: false,
                               controller: passwordController,
+                              obscureText: true,
                               enableSuggestions: false,
                               textCapitalization: TextCapitalization.none,
                               decoration: InputDecoration(
