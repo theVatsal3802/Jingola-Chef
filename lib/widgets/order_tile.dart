@@ -112,7 +112,10 @@ class _OrderTileState extends State<OrderTile> {
                         backgroundColor: Theme.of(context).colorScheme.primary,
                       ),
                       onPressed: () async {
-                        await OtherFunctions.acceptOrder(widget.order.id).then(
+                        await OtherFunctions.acceptOrder(
+                          widget.order.id,
+                          context,
+                        ).then(
                           (_) {
                             setState(() {});
                           },
@@ -129,8 +132,10 @@ class _OrderTileState extends State<OrderTile> {
                         backgroundColor: Colors.green,
                       ),
                       onPressed: () async {
-                        await OtherFunctions.completeOrder(widget.order.id)
-                            .then(
+                        await OtherFunctions.completeOrder(
+                          widget.order.id,
+                          context,
+                        ).then(
                           (_) {
                             setState(() {});
                           },
