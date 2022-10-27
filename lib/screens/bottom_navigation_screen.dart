@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import './auth_screen.dart';
 import './past_order_screen.dart';
 import './home_screen.dart';
+import './in_progress_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   static const routeName = "/bottom-navigation";
@@ -18,6 +19,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
 
   final screens = [
     const HomeScreen(),
+    const InProgressScreen(),
     const PastOrderScreen(),
   ];
 
@@ -69,6 +71,12 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               Icons.fiber_new,
             ),
             label: "New Orders",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.work_history,
+            ),
+            label: "In Progress Orders",
           ),
           BottomNavigationBarItem(
             icon: Icon(

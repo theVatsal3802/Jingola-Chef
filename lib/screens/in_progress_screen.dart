@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../widgets/order_tile.dart';
 import '../models/order_model.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const routeName = "/home";
-  const HomeScreen({super.key});
+class InProgressScreen extends StatelessWidget {
+  static const routeName = "/in-progress";
+  const InProgressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               .collection("orders")
               .where(
                 "status",
-                isEqualTo: "Pending",
+                isEqualTo: "In Progress",
               )
               .snapshots(),
           builder: (context, snapshot) {
@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
             if (snapshot.data!.docs.isEmpty) {
               return Center(
                 child: Text(
-                  "No new orders",
+                  "No orders in progress",
                   textScaleFactor: 1,
                   style: Theme.of(context).textTheme.headline4,
                 ),
